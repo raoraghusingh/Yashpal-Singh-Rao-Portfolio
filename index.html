@@ -192,8 +192,23 @@
 
   @media (max-width: 900px) {
     .hero-bg { grid-template-columns: 100%; }
-    .hero-bg-photo { display: none; }
-    .hero { min-height: auto; }
+    .hero-bg-photo {
+      display: block;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: 70% top;
+      opacity: 0.55;
+    }
+    .hero-bg-photo::after {
+      background: linear-gradient(180deg, rgba(10,14,20,0.15) 0%, rgba(10,14,20,0.5) 45%, rgba(10,14,20,0.92) 80%, var(--ink) 100%);
+    }
+    .hero-bg-fill { display: none; }
+    .hero { min-height: 100svh; }
     .hero-content { padding: 50px 0 60px; }
   }
 

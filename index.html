@@ -695,7 +695,7 @@
             <span><span class="clink-label">LinkedIn</span><div class="clink-sub">/in/yashpal-singh-rao</div></span><span class="clink-arrow">→</span>
           </a>
         </div>
-        <form class="cform" action="https://formspree.io/f/mgobbbgw" method="POST">
+        <form class="cform" id="contactForm">
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -708,7 +708,13 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
-          <button type="submit" class="btn btn-gold" style="align-self: flex-start; margin-top: 4px;">Send Message</button>
+          <button type="submit" class="btn btn-gold" id="submitBtn" style="align-self: flex-start; margin-top: 4px;">Send Message</button>
+          <div id="formSuccess" style="display:none; margin-top: 18px; padding: 16px 20px; border-left: 2px solid var(--gold); background: rgba(212,175,106,0.08); font-size: 0.95rem; color: var(--paper);">
+            ✓ Message sent! I'll get back to you soon.
+          </div>
+          <div id="formError" style="display:none; margin-top: 18px; padding: 16px 20px; border-left: 2px solid #e05; background: rgba(220,0,80,0.08); font-size: 0.95rem; color: var(--paper);">
+            Something went wrong. Please try emailing directly at raoyashpalsingh@gmail.com
+          </div>
         </form>
       </div>
     </div>
@@ -743,7 +749,37 @@
       }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const success = document.getElementById('formSuccess');
+    const error = document.getElementById('formError');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    success.style.display = 'none';
+    error.style.display = 'none';
+    try {
+      const res = await fetch('https://formspree.io/f/mgobbbgw', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(this)
+      });
+      if (res.ok) {
+        success.style.display = 'block';
+        this.reset();
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      error.style.display = 'block';
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }
+  });
+
+
 </script>
 
 </body>

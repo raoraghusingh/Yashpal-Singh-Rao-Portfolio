@@ -3,16 +3,24 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://yashpalsinghrao.com/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://yashpalsinghrao.com/images/yashpal-singh-rao-cgo-seeds-of-innocence.jpg</image:loc>
-      <image:title>Yashpal Singh Rao — Chief Growth Officer, Seeds of Innocence Group</image:title>
+      <image:title>Yashpal Singh Rao — Group Chief Executive Officer, Seeds of Innocence Group</image:title>
     </image:image>
     <image:image>
       <image:loc>https://yashpalsinghrao.com/images/yashpal-singh-rao-profile.jpg</image:loc>
       <image:title>Yashpal Singh Rao profile photo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yashpalsinghrao.com/images/yashpal-singh-rao-speaking-on-a-panel-for-seeds-of-innocence-homeivf-genestrings-lab-and-yashoda-healthcare.jpg</image:loc>
+      <image:title>Yashpal Singh Rao speaking on a panel for Seeds of Innocence, HomeIVF and Genestrings Labs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yashpalsinghrao.com/images/yashpal-singh-rao-leading-a-strategy-session-on-growth-and-operations.jpg</image:loc>
+      <image:title>Yashpal Singh Rao leading a growth and operations strategy session</image:title>
     </image:image>
   </url>
 </urlset>
